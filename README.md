@@ -1,4 +1,9 @@
 # LaCuisine 
+# Demo
+
+
+https://github.com/SurkhabSingh/LaCuisine/assets/120186223/f5582362-3740-472e-a7e5-49eb4f4f8095
+
 
 LaCuisine is a web application where users can search for recipes on demand. It provides a convenient platform for users to explore various recipes, discover new dishes, and cook delicious meals.
 
