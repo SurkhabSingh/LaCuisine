@@ -26,11 +26,13 @@ export function Category() {
   const fetchRecipes = async (selectedCuisine: string) => {
     try {
       const response = await fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=72b7dfd3bf284f27b1965ac6f11fbd8c&cuisine=${selectedCuisine}`
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${
+          import.meta.env.VITE_API_KEY
+        }&cuisine=${selectedCuisine}`
       );
       const data = await response.json();
       setRecipes(data.results);
-      toast.success("Category Search Successful!");
+      // toast.success("Category Search Successful!");
     } catch (error) {
       console.error("Error fetching recipes:", error);
       toast.error("Something went wrong!");
@@ -57,28 +59,29 @@ export function Category() {
           </DropdownMenuRadioItem>
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>
-      <div className="bg-[white] flex flex-col w-full  content-evenly items-center justify-between ">
-        <div className="bg-[white] grid p-10 mt-10 md:grid-cols-5 sm:grid-cols-2 gap-10 content-evenly">
-          {recipes?.map(
-            (element: {
-              id: number;
-              image: string;
-              title: string;
-              summary: string;
-            }) => (
-              <div className="bg-white drop-shadow-xl rounded-lg border-solid border-1 border-slate-400/[0.3]">
-                <Recipes
-                  key={element.id}
-                  id={element.id}
-                  image={element?.image}
-                  title={element.title}
-                  summary=""
-                />
-              </div>
-            )
-          )}
-        </div>
+     <div className="bg-[white] flex flex-col w-full">
+      <div className="bg-[white] grid p-10  = sm:grid-cols-2 gap-10 content-evenly">
+        {recipes?.map(
+          (element: {
+            id: number;
+            image: string;
+            title: string;
+            summary: string;
+          }) => (
+            <div className="bg-white drop-shadow-xl rounded-lg border-solid border-1 border-slate-400/[0.3]">
+              <Recipes
+                key={element.id}
+                id={element.id}
+                image={element?.image}
+                title={element.title}
+                summary={element.summary}
+              />
+            </div>
+          )
+        )}
       </div>
+      </div>
+
       <ToastContainer
         position="top-right"
         autoClose={5000}

@@ -41,7 +41,7 @@ export function GameDetailsPage() {
       const json = await data.json();
       setDetails(json);
       console.log(json);
-      toast.success("API call successful");
+      // toast.success("API call successful");
     } catch (error) {
       console.error("Error fetching data:", error);
       toast.error("Something went wrong!");

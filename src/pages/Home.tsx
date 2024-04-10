@@ -16,10 +16,8 @@ export default function MarketPlace() {
       <div className="h-20 ">
         <NavbarComp />
       </div>
+      <div className=" bg-[#F17228] flex flex-col "></div>
 
-      <div className=" bg-[#F17228] absolute right-0 ">
-        <SearchBar onSearch={handleSearch} />
-      </div>
       <div className="bg-white">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 250">
           <path
@@ -29,14 +27,25 @@ export default function MarketPlace() {
           ></path>
         </svg>
       </div>
-      <div className=" text-[#23262f] bg-white text-[4rem] font-black  font-poppins  ">
-        Recipes
+      {/* <div className="flex flex-col justify-center bg-white"></div> */}
+      <div className=" text-[#ffffff] bg-white text-[4rem] flex flex-row-2 font-poppins   ">
+        <span className="text-[#23262f] flex-1 px-10 mr-10">Recipes</span>
+
+        <div className="pr-20 mr-20 pt-9">
+          <SearchBar onSearch={handleSearch} />
+        </div>
       </div>
-      <div className="bg-white  py-4 flex flex-col  sm:px-60 md:px-[10rem]">
+
+      <div className="bg-white  py-4 flex flex-col  sm:px-60 md:px-[10rem] ">
         <div className=" text-[#23262f]  font-black  font-poppins   ">
-          <Category />
-          {searchTerm && <Searched searchTerm={searchTerm} />}
           {!searchTerm && <RecipeGrid />}
+          {searchTerm && <Searched searchTerm={searchTerm} />}
+        </div>
+        <div className=" px-20 pb-2 flex flex-col mt-10">
+          <span className="text-7xl font-extrabold mb-10 text-black font-poppins">
+            Search by category
+          </span>
+          <Category />
         </div>
       </div>
     </section>

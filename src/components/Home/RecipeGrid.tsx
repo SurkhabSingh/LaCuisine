@@ -26,7 +26,7 @@ export default function RecipeGrid() {
       const json = await data.json();
       setInfo(json.recipes);
       console.log(json.recipes);
-      toast.success("Data Loaded Successfully");
+      // toast.success("Data Loaded Successfully");
     } catch (error) {
       console.error("Error fetching data:", error);
       toast.error("Something went wrong!");
