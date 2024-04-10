@@ -1,5 +1,5 @@
 # LaCuisine 
-# Demo
+## Demo
 
 
 https://github.com/SurkhabSingh/LaCuisine/assets/120186223/f5582362-3740-472e-a7e5-49eb4f4f8095
